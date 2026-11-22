@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Sunday Globe — Sunday 22 November 2026</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1024px; height:1024px; background:#f6f1e5; }
+  body { font-family: Georgia, 'Times New Roman', serif; color:#1a1a1a; }
+  .page { width:1024px; height:1024px; padding:5px 13px 5px; display:flex; flex-direction:column; }
+  /* ---------- masthead ---------- */
+  .mast { border-top:4px solid #b01e24; border-bottom:2px solid #1a1a1a; padding:2px 0 3px; text-align:center; background:#fbf7ec; }
+  .mast h1 { font-size:42px; line-height:0.95; letter-spacing:2px; font-weight:900; }
+  .mast h1 .red { color:#b01e24; }
+  .mast .dateline { font-size:15px; letter-spacing:3px; font-weight:700; margin-top:3px; }
+  .mast .tagline { font-size:12.5px; letter-spacing:1.5px; margin-top:2px; color:#333; }
+  .mast .tagline b { color:#b01e24; }
+  /* ---------- timeline ---------- */
+  .time { display:flex; border-bottom:1.5px solid #1a1a1a; padding:2px 0; background:#fbf7ec; }
+  .time .lab { font-size:9.5px; font-weight:900; letter-spacing:1px; color:#b01e24; width:88px; flex:none; padding-top:2px; }
+  .time .slots { display:flex; flex:1; }
+  .slot { flex:1; padding:0 6px; border-left:1px solid #c9bfa5; }
+  .slot:first-child { border-left:none; }
+  .slot .t { font-size:10px; font-weight:900; letter-spacing:0.5px; }
+  .slot .e { font-size:9.5px; line-height:1.25; }
+  /* ---------- numbers strip ---------- */
+  .nums { display:flex; align-items:stretch; border-bottom:2px solid #1a1a1a; padding:2px 0 2px; background:#fbf7ec; }
+  .nums .lab { font-size:10px; font-weight:900; letter-spacing:1px; color:#fff; background:#1a1a1a; padding:6px 8px; margin-right:8px; display:flex; align-items:center; }
+  .num { flex:1; text-align:center; border-left:1px solid #c9bfa5; padding:0 2px; }
+  .num:first-of-type { border-left:none; }
+  .num .v { font-size:19px; font-weight:900; color:#b01e24; line-height:1; }
+  .num .k { font-size:8px; line-height:1.15; margin-top:1px; }
+  /* ---------- big three ---------- */
+  .big { display:flex; gap:7px; padding:4px 0 4px; border-bottom:2px solid #1a1a1a; }
+  .bcard { flex:1; background:#fffdf6; border:1.5px solid #1a1a1a; padding:4px 6px 4px; display:flex; flex-direction:column; }
+  .bcard.wide { flex:1.35; }
+  .kick { font-size:10px; font-weight:900; letter-spacing:1.5px; color:#b01e24; }
+  .bcard h2 { font-size:18px; line-height:1.02; font-weight:900; margin:1px 0 2px; }
+  .bcard.wide h2 { font-size:20px; }
+  .deck { font-size:10px; line-height:1.28; }
+  .art { margin-top:3px; }
+  .art svg { width:100%; height:34px; }
+  .src { font-size:9px; margin-top:4px; color:#444; border-top:1px solid #d8cdb2; padding-top:3px; }
+  .src b { color:#b01e24; }
+  /* ---------- medium twelve ---------- */
+  .mid { display:grid; grid-template-columns:repeat(4,1fr); gap:4px; padding:4px 0 4px; border-bottom:2px solid #1a1a1a; }
+  .mcard { background:#fffdf6; border:1px solid #8a7f63; padding:3px 5px 2px; display:flex; flex-direction:column; }
+  .mcard .top { display:flex; gap:5px; }
+  .mcard .ic { width:20px; height:20px; flex:none; }
+  .mcard .ic svg { width:20px; height:20px; }
+  .mcard h3 { font-size:11.5px; line-height:1.1; font-weight:900; }
+  .mcard .call { font-size:15px; font-weight:900; color:#b01e24; line-height:1; margin-top:1px; }
+  .mcard .d { font-size:9px; line-height:1.28; margin-top:2px; flex:1; }
+  .mcard .s { font-size:8.5px; color:#555; margin-top:2px; border-top:1px solid #e0d6bd; padding-top:2px; }
+  .mcard .s b { color:#b01e24; }
+  /* ---------- map ---------- */
+  .maprow { display:flex; gap:7px; padding:3px 0; border-bottom:2px solid #1a1a1a; }
+  .mapbox { flex:1.9; background:#eef0e4; border:1.5px solid #1a1a1a; padding:4px 6px; }
+  .mapbox h4, .howbox h4 { font-size:11px; letter-spacing:1.5px; font-weight:900; }
+  .mapbox h4 span, .howbox h4 span { color:#b01e24; }
+  .mapbox svg { width:100%; height:60px; display:block; }
+  .howbox { flex:1; background:#fffdf6; border:1.5px solid #1a1a1a; padding:4px 7px; font-size:9.5px; line-height:1.35; }
+  .howbox .row { display:flex; justify-content:space-between; border-bottom:1px dotted #c9bfa5; padding:1px 0; }
+  .howbox .row b { color:#b01e24; }
+  .howbox p { margin-top:3px; font-size:9px; }
+  /* ---------- list ---------- */
+  .list { padding:3px 0 3px; border-bottom:2px solid #1a1a1a; }
+  .list h4 { font-size:11px; letter-spacing:1.5px; font-weight:900; margin-bottom:2px; }
+  .list h4 span { color:#b01e24; }
+  .cols { display:flex; gap:10px; }
+  .col { flex:1; }
+  .col h5 { font-size:9px; letter-spacing:1px; color:#fff; background:#1a1a1a; padding:1px 5px; margin-bottom:1px; }
+  .col h5 span { color:#f0c040; }
+  .col ol { list-style:none; }
+  .col li { font-size:8.5px; line-height:1.12; padding:0.5px 0; border-bottom:1px dotted #d8cdb2; }
+  .col li b { color:#b01e24; }
+  .col li .n { font-weight:900; }
+  /* ---------- date check ---------- */
+  .dc { background:#fdf6d8; border:1.5px solid #b01e24; margin-top:3px; padding:3px 8px 2px; }
+  .dc h4 { font-size:11px; letter-spacing:1.5px; font-weight:900; color:#b01e24; }
+  .dc .grid { display:flex; gap:12px; margin-top:3px; }
+  .dc ul { list-style:none; flex:1; }
+  .dc li { font-size:8.5px; line-height:1.25; padding:1px 0; }
+  .dc li b { color:#b01e24; }
+  .dc .ny { border-left:2px solid #b01e24; padding-left:10px; flex:0.75; }
+  .dc .ny div { font-size:8.5px; line-height:1.3; padding:1px 0; }
+  /* ---------- footer ---------- */
+  .foot { margin-top:3px; font-size:8.5px; line-height:1.35; color:#444; text-align:center; }
+  .foot b { color:#1a1a1a; }
+  .foot .how { color:#b01e24; font-weight:900; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="mast">
+    <h1>THE <span class="red">SUNDAY</span> GLOBE</h1>
+    <div class="dateline">SUNDAY 22 NOVEMBER 2026 &nbsp;·&nbsp; THE WORLD IN ONE PAGE</div>
+    <div class="tagline"><b>50 STORIES</b> · 7 REGIONS · 9 FIELDS · <b>ALL FROM THIS SUNDAY</b></div>
+  </div>
+
+  <div class="time">
+    <div class="lab">THE DAY<br>IN UTC</div>
+    <div class="slots">
+      <div class="slot"><div class="t">OVERNIGHT</div><div class="e">Gaza floods; four nations draft aid call</div></div>
+      <div class="slot"><div class="t">02:48 UTC</div><div class="e">Eisenkot tapped; US details $12bn revenue</div></div>
+      <div class="slot"><div class="t">04:30 UTC</div><div class="e">Nvidia probe; Gulf condemns Iran</div></div>
+      <div class="slot"><div class="t">MORNING</div><div class="e">Modi opens bridge; 10M HPV doses</div></div>
+      <div class="slot"><div class="t">MIDDAY</div><div class="e">Ghana notes; Norway voids licences</div></div>
+      <div class="slot"><div class="t">AFTERNOON</div><div class="e">ATP final: Alcaraz v Zverev</div></div>
+      <div class="slot"><div class="t">EVENING</div><div class="e">France's 4th protest weekend</div></div>
+    </div>
+  </div>
+
+  <div class="nums">
+    <div class="lab">THE DAY<br>IN NUMBERS</div>
+    <div class="num"><div class="v">1M+</div><div class="k">flooded Gaza shelters</div></div>
+    <div class="num"><div class="v">$12BN</div><div class="k">Venezuela revenue</div></div>
+    <div class="num"><div class="v">5,300</div><div class="k">DRC Ebola deaths</div></div>
+    <div class="num"><div class="v">−17.5%</div><div class="k">Taiwan shares, 1 week</div></div>
+    <div class="num"><div class="v">293,600</div><div class="k">Kenya–Saudi jobs</div></div>
+    <div class="num"><div class="v">10M</div><div class="k">HPV doses, India</div></div>
+  </div>
+
+  <div class="big">
+    <div class="bcard wide">
+      <div class="kick">1 · GAZA — FLOOD</div>
+      <h2>GAZA DROWNS AS STORMS HIT</h2>
+      <div class="deck">Heavy rain floods shelters for <b>1M+ displaced</b>. Australia, Canada, Italy and the UK jointly demand Israel open aid access at once.</div>
+      <div class="art"><svg viewBox="0 0 300 64">
+        <rect x="0" y="0" width="300" height="64" fill="#dcebf5"/>
+        <path d="M20 44 Q70 30 120 40 T260 36 L280 44 L280 64 L20 64 Z" fill="#bcd6ea"/>
+        <path d="M30 50 h40 l6 -12 h30 l6 12 h40 l6 -12 h30 l6 12 h40" fill="none" stroke="#5b7a99" stroke-width="1.5"/>
+        <g fill="#1a1a1a"><rect x="52" y="34" width="10" height="10"/><polygon points="52,34 62,34 57,26"/><rect x="122" y="34" width="10" height="10"/><polygon points="122,34 132,34 127,26"/><rect x="192" y="34" width="10" height="10"/><polygon points="192,34 202,34 197,26"/></g>
+        <g stroke="#2f6db3" stroke-width="2" stroke-linecap="round"><line x1="40" y1="8" x2="36" y2="16"/><line x1="52" y1="6" x2="48" y2="14"/><line x1="150" y1="8" x2="146" y2="16"/><line x1="240" y1="6" x2="236" y2="14"/><line x1="262" y1="10" x2="258" y2="18"/></g>
+        <text x="8" y="60" font-size="9" font-weight="bold" fill="#1a3a5c">GAZA · SHELTERS UNDER WATER</text>
+        <text x="150" y="14" font-size="11" font-weight="bold" fill="#b01e24" text-anchor="middle">1M+ DISPLACED</text>
+      </svg></div>
+      <div class="src"><b>CONFIRMED</b> · The Paris Eye · Nexus Europa — four-nation call, 02:48 UTC</div>
+    </div>
+    <div class="bcard">
+      <div class="kick">2 · ISRAEL — POLITICS</div>
+      <h2>EISENKOT TAPPED TO GOVERN</h2>
+      <div class="deck">President Herzog asks ex-army chief <b>Gadi Eisenkot</b> to form the next government — bypassing Netanyahu.</div>
+      <div class="art"><svg viewBox="0 0 200 64">
+        <rect x="0" y="0" width="200" height="64" fill="#f3ead2"/>
+        <circle cx="60" cy="30" r="17" fill="#fffdf6" stroke="#1a1a1a" stroke-width="2"/>
+        <circle cx="60" cy="24" r="6" fill="#1a1a1a"/><path d="M48 44 Q60 30 72 44 Z" fill="#1a1a1a"/>
+        <circle cx="145" cy="30" r="17" fill="#e8e0c8" stroke="#8a7f63" stroke-width="2"/>
+        <circle cx="145" cy="24" r="6" fill="#8a7f63"/><path d="M133 44 Q145 30 157 44 Z" fill="#8a7f63"/>
+        <path d="M82 30 h42" stroke="#b01e24" stroke-width="3" stroke-dasharray="5 3"/>
+        <polygon points="124,26 132,30 124,34" fill="#b01e24"/>
+        <text x="42" y="60" font-size="8.5" font-weight="bold">EISENKOT</text>
+        <text x="128" y="60" font-size="8.5" fill="#666">NETANYAHU</text>
+      </svg></div>
+      <div class="src"><b>REPORTED</b> · The Paris Eye, 02:48 UTC</div>
+    </div>
+    <div class="bcard">
+      <div class="kick">3 · TECH — NVIDIA</div>
+      <h2>NVIDIA PROBES ITS CEO</h2>
+      <div class="deck">Board opens inquiry into <b>Jensen Huang</b> as the FBI investigates an affair with a woman suspected of Chinese intelligence ties.</div>
+      <div class="art"><svg viewBox="0 0 200 64">
+        <rect x="0" y="0" width="200" height="64" fill="#e9f0e2"/>
+        <rect x="55" y="12" width="90" height="34" rx="4" fill="#1a1a1a"/>
+        <rect x="63" y="20" width="74" height="18" rx="2" fill="#7fc97f"/>
+        <text x="100" y="34" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">NVIDIA</text>
+        <circle cx="160" cy="22" r="14" fill="none" stroke="#b01e24" stroke-width="3"/>
+        <line x1="170" y1="32" x2="182" y2="44" stroke="#b01e24" stroke-width="3"/>
+        <text x="100" y="60" font-size="9" font-weight="bold" fill="#b01e24" text-anchor="middle">FBI INQUIRY · BOARD PROBE</text>
+      </svg></div>
+      <div class="src"><b>REPORTED</b> · Nexus Europa, 04:30 UTC</div>
+    </div>
+  </div>
+
+  <div class="mid">
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#f3ead2"/><text x="17" y="23" font-size="16" font-weight="bold" text-anchor="middle" fill="#1a1a1a">$</text></svg></div><h3>4 · VENEZUELA: $12BN LEDGER</h3></div><div class="call">$12BN</div><div class="d">US report on $12bn Venezuelan revenue.</div><div class="s"><b>REPORTED</b> · The Paris Eye</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#f8d7d7"/><polyline points="4,10 12,16 18,8 30,26" fill="none" stroke="#b01e24" stroke-width="2.5"/></svg></div><h3>5 · TAIWAN: MARKET ROUT</h3></div><div class="call">−17.5%</div><div class="d">Short-selling banned from Monday.</div><div class="s"><b>CONFIRMED</b> · Taiwan FSC</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#dcebf5"/><circle cx="10" cy="14" r="4" fill="#1a1a1a"/><circle cx="22" cy="12" r="4" fill="#1a1a1a"/><circle cx="17" cy="24" r="4" fill="#1a1a1a"/></svg></div><h3>6 · FRANCE: 4TH PROTEST WEEKEND</h3></div><div class="call">4TH</div><div class="d">Fourth weekend of cost-of-living protests.</div><div class="s"><b>REPORTED</b> · The Paris Eye</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#e9f0e2"/><text x="17" y="23" font-size="15" font-weight="bold" text-anchor="middle" fill="#1a1a1a">4</text></svg></div><h3>7 · GULF CONDEMNS IRAN</h3></div><div class="call">4 NATIONS</div><div class="d">Four Gulf states condemn Iran strikes.</div><div class="s"><b>CONFIRMED</b> · Nexus Europa</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#f3ead2"/><rect x="6" y="10" width="22" height="14" fill="#7a9a5b"/><text x="17" y="20" font-size="8" font-weight="bold" text-anchor="middle" fill="#fff">GH₵</text></svg></div><h3>8 · GHANA'S NEW HERITAGE NOTES</h3></div><div class="call">NEW NOTES</div><div class="d">Notes honour Nkrumah, Annan, traders.</div><div class="s"><b>CONFIRMED</b> · C54 News</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#dcebf5"/><path d="M8 26 L17 8 L26 26 Z" fill="none" stroke="#1a1a1a" stroke-width="2"/><line x1="12" y1="26" x2="22" y2="26" stroke="#b01e24" stroke-width="2.5"/></svg></div><h3>9 · NORWAY: LICENCES VOID</h3></div><div class="call">VOID</div><div class="d">Court voids climate-disputed licences.</div><div class="s"><b>CONFIRMED</b> · C54 News</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#e9f0e2"/><circle cx="17" cy="17" r="11" fill="none" stroke="#1a1a1a" stroke-width="2"/><path d="M17 10 v7 l5 3" stroke="#b01e24" stroke-width="2" fill="none"/></svg></div><h3>10 · EBOLA: LAST PATIENT OUT</h3></div><div class="call">5,300</div><div class="d">Last Ebola patient out; DRC toll 5,300+.</div><div class="s"><b>CONFIRMED</b> · C54 News</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#f8d7d7"/><circle cx="17" cy="17" r="10" fill="#7fc97f"/><path d="M17 7 v20 M7 17 h20" stroke="#fff" stroke-width="1.5"/></svg></div><h3>11 · ATP FINAL: ALCARAZ v ZVEREV</h3></div><div class="call">THE FINAL</div><div class="d">Alcaraz v Zverev for the Turin title.</div><div class="s"><b>CONFIRMED</b> · BBC Sport</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#f3ead2"/><path d="M4 24 h26 M8 24 v-8 h18 v8" fill="none" stroke="#1a1a1a" stroke-width="2"/></svg></div><h3>12 · MODI OPENS NITISH SETU</h3></div><div class="call">NEW BRIDGE</div><div class="d">Bridge links Patna and Vaishali.</div><div class="s"><b>CONFIRMED</b> · CareerIndia</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#dcebf5"/><path d="M17 6 L27 28 H7 Z" fill="#7fc97f"/><rect x="15" y="16" width="4" height="9" fill="#fff"/></svg></div><h3>13 · INDIA: 10M HPV DOSES</h3></div><div class="call">10M</div><div class="d">One crore HPV doses administered.</div><div class="s"><b>CONFIRMED</b> · CareerIndia</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#f8d7d7"/><text x="17" y="23" font-size="16" font-weight="bold" text-anchor="middle" fill="#b01e24">!</text></svg></div><h3>14 · SOMALIA AMBUSH CLAIM</h3></div><div class="call">100s</div><div class="d">Claim: hundreds dead in ambush.</div><div class="s"><b>CLAIM</b> · C54 News</div></div>
+    <div class="mcard"><div class="top"><div class="ic"><svg viewBox="0 0 34 34"><rect width="34" height="34" fill="#f3ead2"/><circle cx="17" cy="17" r="11" fill="#f0c040"/><text x="17" y="21" font-size="11" font-weight="bold" text-anchor="middle">₿</text></svg></div><h3>15 · BITCOIN: TWO-YEAR LOW</h3></div><div class="call">2-YR LOW</div><div class="d">Lowest price in more than two years.</div><div class="s"><b>REPORTED</b> · SimpleLife News</div></div>
+  </div>
+
+  <div class="maprow">
+    <div class="mapbox">
+      <h4>WHERE IT HAPPENED <span>— 50 STORIES ON ONE MAP</span></h4>
+      <svg viewBox="0 0 560 104">
+        <rect x="0" y="0" width="560" height="104" fill="#eef0e4"/>
+        <g fill="#cfd6bd" stroke="#8a9a76" stroke-width="1">
+          <path d="M28 18 L78 12 L96 26 L84 44 L58 52 L38 40 Z"/>
+          <path d="M96 30 L128 26 L138 44 L122 58 L100 52 Z"/>
+          <path d="M96 62 L122 60 L130 78 L112 92 L96 80 Z"/>
+          <path d="M250 16 L292 10 L306 26 L288 40 L256 36 Z"/>
+          <path d="M300 34 L336 30 L348 52 L322 66 L300 54 Z"/>
+          <path d="M360 14 L470 8 L500 30 L470 52 L420 58 L380 44 L362 28 Z"/>
+          <path d="M470 62 L516 58 L528 76 L500 88 L474 78 Z"/>
+          <path d="M516 78 L544 76 L550 88 L528 94 Z"/>
+        </g>
+        <g fill="#b01e24" font-size="9" font-weight="bold" text-anchor="middle">
+          <circle cx="58" cy="28" r="7"/><text x="58" y="31" fill="#fff">3</text>
+          <circle cx="112" cy="72" r="7"/><text x="112" y="75" fill="#fff">4</text>
+          <circle cx="278" cy="20" r="7"/><text x="278" y="23" fill="#fff">9</text>
+          <circle cx="292" cy="38" r="7"/><text x="292" y="41" fill="#fff">11</text>
+          <circle cx="322" cy="50" r="7"/><text x="322" y="53" fill="#fff">1</text>
+          <circle cx="340" cy="40" r="7"/><text x="340" y="43" fill="#fff">2</text>
+          <circle cx="348" cy="54" r="6"/><text x="348" y="57" fill="#fff" font-size="8">7</text>
+          <circle cx="448" cy="42" r="7"/><text x="448" y="45" fill="#fff">5</text>
+        </g>
+        <g font-size="8.5" fill="#44502f"><text x="8" y="98">N. AMERICA</text><text x="120" y="98">S. AMERICA</text><text x="255" y="98">EUROPE</text><text x="305" y="98">AFRICA</text><text x="415" y="98">ASIA</text><text x="510" y="98">OCEANIA</text></g>
+      </svg>
+    </div>
+    <div class="howbox">
+      <h4>HOW SURE <span>— READ THE LABELS</span></h4>
+      <div class="row"><span><b>CONFIRMED</b> — on the record</span><span><b>REPORTED</b> — news report</span></div>
+      <div class="row"><span><b>CLAIM</b> — one side claims it</span><span><b>OFFICIALS</b> — officials say so</span></div>
+      <p><b>BY REGION:</b> Americas <b>5</b> · Europe <b>7</b> · Middle East <b>5</b> · Africa <b>14</b> · Asia <b>14</b> · Oceania <b>2</b> · Global <b>3</b> = <b>50</b></p>
+    </div>
+  </div>
+
+  <div class="list">
+    <h4>ALSO ON SUNDAY 22 NOVEMBER <span>— #16–50, BY REGION</span></h4>
+    <div class="cols">
+      <div class="col">
+        <h5>AMERICAS · <span>3</span></h5>
+        <ol>
+          <li><span class="n">16.</span> SBF's 82-min prison interview · EventGraph</li>
+          <li><span class="n">17.</span> FinCEN names MEXC laundering concern · EventGraph</li>
+          <li><span class="n">18.</span> Binance may freeze MEXC deposits · EventGraph</li>
+        </ol>
+        <h5>EUROPE · <span>4</span></h5>
+        <ol>
+          <li><span class="n">19.</span> UK defence minister meets Zelenskyy in Kyiv · EventGraph</li>
+          <li><span class="n">20.</span> Estonia's Russia-border plan draws rebuke · CareerIndia</li>
+          <li><span class="n">21.</span> Romanian driver freed after Bulgaria pile-up · Nexus Europa</li>
+          <li><span class="n">22.</span> Blair: rejoin EU only if UK innovates on tech · Huddleworld</li>
+        </ol>
+        <h5>MIDDLE EAST · <span>2</span></h5>
+        <ol>
+          <li><span class="n">23.</span> Iran warns of further escalation · Nexus Europa</li>
+          <li><span class="n">24.</span> Israeli strikes persist amid Gaza floods · Nexus Europa</li>
+        </ol>
+        <h5>AFRICA · <span>3</span></h5>
+        <ol>
+          <li><span class="n">25.</span> Kenya secures 293,600 Saudi jobs · C54</li>
+          <li><span class="n">26.</span> Sahel states restart West Africa dialogue · C54</li>
+          <li><span class="n">27.</span> New Tigray mayor vows polls in six months · C54</li>
+        </ol>
+      </div>
+      <div class="col">
+        <h5>AFRICA · <span>8</span></h5>
+        <ol>
+          <li><span class="n">28.</span> Ramos reappointed PM of São Tomé and Príncipe · C54</li>
+          <li><span class="n">29.</span> DRC's Tshisekedi enacts reform law · C54</li>
+          <li><span class="n">30.</span> Nigeria starts building naval ships · C54</li>
+          <li><span class="n">31.</span> Awar Odhiang named Model of the Year · C54</li>
+          <li><span class="n">32.</span> Tyla, Tems &amp; Kidjo lead Grammy hopes · C54</li>
+          <li><span class="n">33.</span> Protest outside S. African court · C54</li>
+          <li><span class="n">34.</span> "No electricity, no vote" tests S. Africa's ANC · C54</li>
+          <li><span class="n">35.</span> Lagos Fashion Week tied to trade ties · C54</li>
+        </ol>
+        <h5>ASIA · <span>4</span></h5>
+        <ol>
+          <li><span class="n">36.</span> JEE Main 2027 registration closes today · CareerIndia</li>
+          <li><span class="n">37.</span> India dominate NZ in Wellington Test · CareerIndia</li>
+          <li><span class="n">38.</span> Google builds Duplex into Gemini Tasks · EventGraph</li>
+          <li><span class="n">39.</span> AWS launches KV-cache agent skill · EventGraph</li>
+        </ol>
+      </div>
+      <div class="col">
+        <h5>ASIA · <span>7</span></h5>
+        <ol>
+          <li><span class="n">40.</span> India &amp; Japan deepen defence pact · CareerIndia</li>
+          <li><span class="n">41.</span> Arunachal Police win President's Colour · CareerIndia</li>
+          <li><span class="n">42.</span> Singapore plans AI-agent checks · CryptoSlate</li>
+          <li><span class="n">43.</span> Taiwan's Lin Naili freed on bail · SimpleLife</li>
+          <li><span class="n">44.</span> Vote-buying probe in Yilan's Jiaoxi · SimpleLife</li>
+          <li><span class="n">45.</span> Lai backs Su &amp; Shen at Sanchong rally · SimpleLife</li>
+          <li><span class="n">46.</span> CZ on entrepreneurship &amp; AI in Japan · PANews</li>
+        </ol>
+        <h5>OCEANIA · <span>2</span></h5>
+        <ol>
+          <li><span class="n">47.</span> Smith out as Australia bowl first v S. Africa · C54</li>
+          <li><span class="n">48.</span> Australia beat Wales in Nations Championship · Huddleworld</li>
+        </ol>
+        <h5>GLOBAL · <span>2</span></h5>
+        <ol>
+          <li><span class="n">49.</span> US &amp; China agree to control military AI · SimpleLife</li>
+          <li><span class="n">50.</span> UN Geneva talks on killer robots: no deal · EventGraph</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="dc">
+    <h4>DATE CHECK — LEFT OUT ON PURPOSE: FIRST REPORTED BEFORE THIS SUNDAY</h4>
+    <div class="grid">
+      <ul>
+        <li>✕ <b>Russia's 110-missile barrage</b> on Ukraine — <b>Fri 20 Nov</b></li>
+        <li>✕ <b>Missiles &amp; drone into Poland</b> — <b>Fri 20 Nov</b></li>
+        <li>✕ <b>Rutte: NATO defends "every inch"</b> — <b>Sat 21 Nov</b></li>
+        <li>✕ <b>COP30 deal: $1.3tn/yr,</b> no phaseout — <b>Sat 21 Nov</b></li>
+        <li>✕ <b>Peru 6.8 quake,</b> Junín, no damage — <b>Fri 20 Nov</b></li>
+        <li>✕ <b>Houthis' 3 missiles at Riyadh</b> stopped — <b>Sat 21 Nov</b></li>
+      </ul>
+      <ul>
+        <li>✕ <b>Iran hits Bahrain industrial site</b> — <b>Sat 21 Nov</b></li>
+        <li>✕ <b>Mexico captures "El Chapo Isidro"</b> — <b>Sat 21 Nov</b></li>
+        <li>✕ <b>Trump vows 10% card-rate cap</b> — <b>Sat 21 Nov</b></li>
+        <li>✕ <b>Trump leans to Iran squeeze,</b> not strikes — <b>Sat 21 Nov</b></li>
+        <li>✕ <b>US stocks plunge;</b> chip index −10% — <b>Fri 20 Nov</b></li>
+        <li>✕ <b>Riemann "proved with Claude"</b> claim — <b>Fri 20 Nov</b></li>
+        <li>✕ <b>EU nears Lagarde-successor deal</b> — <b>Thu–Fri 19–20 Nov</b></li>
+      </ul>
+      <div class="ny">
+        <b>NOT YET:</b>
+        <div>○ ATP Finals champion — Alcaraz v Zverev decided Sunday evening, Turin.</div>
+        <div>○ NATO Council meets Monday on the Poland airspace breach.</div>
+        <div>○ Taiwan's short-selling ban takes effect Monday 23 Nov.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <b>SOURCES:</b> Reuters, AP, AFP, BBC Sport, The Paris Eye, Nexus Europa, C54 News, CareerIndia, EventGraph, SimpleLife News, CryptoSlate, PANews. Every story happened or was first reported on <b>Sunday 22 November 2026</b>. Claims are attributed; nothing here is speculation shown as fact. <span class="how">HOW TO READ:</span> date first, then the three leads, then the map — the date check at the bottom is the proof.
+  </div>
+
+</div>
+</body>
+</html>
