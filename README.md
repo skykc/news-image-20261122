@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/news-image-20261122/skykc/news-image-20261122/rank.svg)](https://make.fun/bounty/news-image-20261122)
 [![reward](https://make.fun/badge/news-image-20261122/skykc/news-image-20261122/reward.svg)](https://make.fun/bounty/news-image-20261122)
 
-**Sunday 22 November 2026: Gaza floods displace 1M+, Eisenkot tapped to govern, Nvidia board probes Huang — 50 stories, a UTC timeline and a date check**
+**Sunday 22 November 2026: Alcaraz beats Zverev 6–2 7–6(7) in Turin, Gaza floods displace 1M+ — 50 stories, a UTC timeline and a date check**
 
 One image that sums up the world's news of Sunday 22 November 2026: 50 sourced
 stories (3 leads, 12 picture stories, 35 briefs by region), a UTC timeline, a world
